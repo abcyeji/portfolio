@@ -1,5 +1,5 @@
 html, body {
-    font-family: "Gmarket Sans", "Pretendard" , serif;
+    font-family: "Paperlogy", sans-serif;
     /*앞에 쓴 서체를 적용하고 지원이 안되면 두번째 서체를 적용*/
     font-size: 17px;
     font-weight: 400;
@@ -14,9 +14,16 @@ html, body {
 }
 #wrap {
     position: relative; /*header기준의 정렬*/
+    overflow-x: hidden; /*가로스크롤 삭제*/
     width: 100%;
 }
-@media screen and (max-width:1300px){ /*20 + 20 = 40 + 1260 = 1300*/
+@media screen and (max-width:1540px) {
+    .wrapper {
+        width: auto;
+        margin: 0 100px 0 140px; 
+    }
+}
+@media screen and (max-width:1024px){ /*20 + 20 = 40 + 1260 = 1300*/
     .wrapper {
         width: auto;
         margin: 0 20px; 
@@ -31,7 +38,7 @@ html, body {
 
 .blind { /*글자를 숨겨야하는 경우*/
     position: absolute;
-    clip: rect(0, 0, 0, 0);
+    clip: rect(0 0 0 0);
     width: 1px;
     height: 1px;
     margin: -1px;
@@ -67,30 +74,30 @@ html, body {
 :root {
     --header-h: 100px; /*header높이*/
     --header-h-m: -100px; /*header높이의 마이너스값*/
-    --tit-font-color: #151A33;
+    --tit-font-color: #1D1D1D;
     --base-color: #555;
-    --point-color: #3BA479;
+    --point-color: #EFE4E2;
     --bold-weight: 700;
-    --visual-font-size: 3.53rem; /*60 / 17 = 3.53*/
     --tit-font-size: 2.65rem;  /*45 / 17 = 2.65*/
     --tit-line-height: 1.2;
-    --sub-font-size: 1.41rem; /*24 / 17 = 1.41*/
+    --sub-tit-font-size: 1.47rem; /*25 /17 = 1.47*/
+    --display-size: 3.53rem; /*60 / 17 =3.53*/
+    --sub-tit-size:45px;
 }
 @media screen and (max-width:1024px) {
     :root {
         --header-h: 56px; /*header높이*/
         --header-h-m: -56px;
+        --display-size: 2.65rem; /*45 / 17 = 2.65*/
         --tit-font-size: 2.06rem;  /*35 / 17 = 2.06*/
-        --sub-font-size: 1.35rem; /*23 / 17 = 1.35*/
+        --sub-tit-font-size: 1.47rem; /*25 /17 = 1.47*/
 
     }
 }
 @media screen and (max-width:768px) {
     :root {
+        --display-size: 1.88rem; /*60 / 17 =3.53*/
         --tit-font-size: 1.88rem; /*30/ 16 = 1.88*/
-        --sub-font-size: 1.25rem; /*20 / 16 = 1.25*/
-        --visual-font-size: 1.88rem;  /*30/ 16 = 1.88*/
-
-
+        --sub-tit-font-size: 1.25rem /*20/16 =1.25*/
     }
 }
