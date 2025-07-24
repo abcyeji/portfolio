@@ -26,30 +26,14 @@ $(document).ready(function(){
 			responsiveWidth: 640 /* fullpage를 적용시키지 않을 모바일 사이즈 */
 		});
 		
-/*************************************** */
-		// const snbScroll = function() {
-		// 	const $menu_wrap = $("header .gnb ul");  /* 선택자를 잘 입력해야함 */
-		// 	const $menu_li = $("header .gnb ul li");  
-		// 	function scrollToElement($element) {
-		// 		const containerWidth = $menu_wrap.width();
-		// 		const itemWidth = $element.outerWidth(true);
-		// 		const totalItemsWidth = $menu_wrap[0].scrollWidth;
-		// 		const newScrollPosition = ($element.index() === 0) ? 0 :
-		// 			($element.index() === $menu_li.length - 1) ? totalItemsWidth - containerWidth :
-		// 			$element.position().left + $menu_wrap.scrollLeft() - (containerWidth - itemWidth) / 2;
-		// 		$menu_wrap.animate({
-		// 			scrollLeft: newScrollPosition
-		// 		}, 500);
-		// 	}
-		// 	const $activeItem = $menu_wrap.find(".active");
-		// 	if ($activeItem.length) {
-		// 		scrollToElement($activeItem);
-		// 	}
-		// } 
-		// snbScroll();   /* 함수의 실행 */
-
-
-
+/************마우스커서변경*************************** */
+		$(window).on('scroll mousemove', function(e){  /* html cursor가 마우스 포인터를 따라다니게 하는 값 */
+			$('.cursor').css('left', e.pageX + 'px');
+			$('.cursor').css('top', e.pageY + 'px');
+		});
+		$('.popup').hover(function(){ /* 특정한 요소에 마우스를 올렸을때만 on 클래스 주기 */
+			$('.cursor').toggleClass('on');
+		});
 
 
 	
